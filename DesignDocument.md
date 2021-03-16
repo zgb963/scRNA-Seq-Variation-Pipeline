@@ -8,7 +8,12 @@ Context
 
 
 
-Goals & Non-Goals
+Project Goals 
+
+
+
+
+Project Non-Goals
 
 
 

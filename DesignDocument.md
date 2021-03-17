@@ -1,4 +1,4 @@
-Overview
+**Overview**
 
 Dr. Barefield’s Lab (Barefield Lab) is interested in the heterogeneity of cells within the CCS. The Cardiac Conduction System (CCS) is a group of specialized muscle cells found in the heart’s walls. These muscle cells send signals to the rest of the heart muscle, which causes a contraction. Their distinct components include the sinoatrial node (SAN), the atrioventricular node/His bundle(AVN/His), and Purkinje fiber (PF) regions. The cells within these components were typically thought to be “homogeneous”. But each component of the CCS consists of unique cardiac cell types with their own physiological properties. Therefore, these components have significant cellular heterogeneity. The analysis of individual single cells within the CCS is important to discover the mechanisms of the heart not seen by studying a bulk population of cardiac cells.
 
@@ -6,7 +6,7 @@ Presently, there are a limited number of distinct molecular markers for the diff
 
 Although there are hurdles in understanding the intricate cellular and molecular landscape of the CCS, the combination of microdissection, single-cell isolation, and RNA sequencing can be used to overcome these hurdles. The pipeline built will help provide a foundation for a molecular blueprint of the CCS. This project represents a comprehensive assessment of gene expression profiling and provides bioinformatics tools to facilitate future efforts in CCS cell identification and characterization.
 
-Context
+**Context**
 
 As aforementioned the CCS plays an essential role in heart development and function. Currently we know that there is  significant “intracomponent cell-type heterogeneity“ within each CCS component itself. 
 

@@ -22,8 +22,8 @@ It is evident from the example of transitional cells that understanding the comp
 
 # Goals # 
 
-* Obtain FASTQ files from SRA in Gene Expression Omnibus (GEO)
-* De-multiplex and map scRNA-Seq data to the mouse genome using Cell Ranger 
+* Retrieve scRNA-Seq files from NCBI SRA
+* De-multiplex and map scRNA-Seq data to mouse genome using Cell Ranger 
 * Perform clustering of scRNA-Seq data using Seraut
 * Quantify scRNA-Seq data
 * Report significant output including standard deviations of gene expression of cells in clusters of interest

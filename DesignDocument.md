@@ -111,27 +111,75 @@ It is evident from the example of transitional cells that understanding the comp
     </tr>
     <tr>
      <td>April 4 </br> (Week 12)</td>
-      <td>tasks</td>
-      <td>tasks</td>
-      <td>tasks</td>
+      <td>
+        <ul>
+         <li>Implement Dr.Barefield’s feedback to generate significant outputs </li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+         <li>Implement Dr.Barefield’s feedback to generate significant outputs </li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+         <li>Implement Dr.Barefield’s feedback to generate significant outputs </li>
+        </ul>
+      </td>
     </tr>
     <tr>
      <td>April 11 </br> (Week 13)</td>
-      <td>tasks</td>
-      <td>tasks</td>
-      <td>tasks</td>
+      <td>
+        <ul>
+         <li>Implement Dr.Barefield’s feedback to generate significant outputs </li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+         <li>Implement Dr.Barefield’s feedback to generate significant outputs </li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+         <li>Implement Dr.Barefield’s feedback to generate significant outputs </li>
+        </ul>
+      </td>
     </tr>
     <tr>
      <td>April 18 </br> (Week 14)</td>
-      <td>tasks</td>
-      <td>tasks</td>
-      <td>tasks</td>
+      <td>
+        <ul>
+         <li>Test and debug pipeline </li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+         <li>Test and debug pipeline </li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+         <li>Test and debug pipeline </li>
+        </ul>
+      </td>
     </tr>
     <tr>
      <td>April 25 </br> (Week 15)</td>
-      <td>tasks</td>
-      <td>tasks</td>
-      <td>tasks</td>
+      <td>
+        <ul>
+         <li>Prepare final presentation </li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+         <li>Prepare final presentation </li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+         <li>Prepare final presentation </li>
+        </ul>
+      </td>
     </tr>
   </tbody>
 </table>

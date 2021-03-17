@@ -52,9 +52,27 @@ It is evident from the example of transitional cells that understanding the comp
     </tr>
     <tr>
      <td>March 21 </br> (Week 10)</td>
-      <td>tasks</td>
-      <td>tasks</td>
-      <td>tasks</td>
+      <td>
+        <ul>
+         <li>Complete design doc</li>
+         <li>Retrieve SRA data + determine SRA data type </li>
+         <li>Become familiar with Cell Ranger and Seraut + determine default parameters</li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+         <li>Complete design doc</li>
+         <li>Retrieve SRA data + determine SRA data type </li>
+         <li>Become familiar with Cell Ranger and Seraut + determine default parameters</li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+         <li>Complete design doc</li>
+         <li>Retrieve SRA data + determine SRA data type </li>
+         <li>Become familiar with Cell Ranger and Seraut + determine default parameters</li>
+        </ul>
+      </td>
     </tr>
     <tr>
      <td>March 28 </br> (Week 11)</td>

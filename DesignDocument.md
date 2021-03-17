@@ -35,6 +35,10 @@ It is evident from the example of transitional cells that understanding the comp
 
 # Proposed Solution #
 
+
+
+
+
 # Milestones # 
 <table>
   <tbody>

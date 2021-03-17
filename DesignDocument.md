@@ -37,6 +37,9 @@ It is evident from the example of transitional cells that understanding the comp
 
 
 
+![flowchart](https://github.com/Genevieve-Baddoo/scRNA-Seq-Variation-Pipeline/blob/main/Comp%20Bio%20scRNA-Seq%20Pipeline.png)
+
+
 
 
 # Milestones # 

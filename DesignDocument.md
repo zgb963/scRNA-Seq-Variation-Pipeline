@@ -44,33 +44,50 @@ It is evident from the example of transitional cells that understanding the comp
       <th>Aditi</th>
       <th>Ade</th>
     </tr>
-    <tr>
+   <tr>
      <td>March 14 </br> (Week 9)</td>
-      <td>tasks</td>
-      <td>tasks</td>
-      <td>tasks</td>
+      <td>
+        <ul>
+         <li>Complete design doc</li>
+         <li>Retrieve SRA data + determine SRA data type </li>
+         <li>Become familiar with Cell Ranger and Seraut + determine default parameters</li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+         <li>Complete design doc</li>
+         <li>Retrieve SRA data + determine SRA data type </li>
+         <li>Become familiar with Cell Ranger and Seraut + determine default parameters</li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+         <li>Complete design doc</li>
+         <li>Retrieve SRA data + determine SRA data type </li>
+         <li>Become familiar with Cell Ranger and Seraut + determine default parameters</li>
+        </ul>
+      </td>
     </tr>
-    <tr>
+   <tr>
      <td>March 21 </br> (Week 10)</td>
       <td>
         <ul>
-         <li>Complete design doc</li>
-         <li>Retrieve SRA data + determine SRA data type </li>
-         <li>Become familiar with Cell Ranger and Seraut + determine default parameters</li>
+         <li>Meet with Dr. Barefield</li>
+         <li>Build python script to run Cell Ranger on SRA data </li>
+         <li>Retrieve CellRanger output matrix files from GEO</li>
         </ul>
       </td>
       <td>
         <ul>
-         <li>Complete design doc</li>
-         <li>Retrieve SRA data + determine SRA data type </li>
-         <li>Become familiar with Cell Ranger and Seraut + determine default parameters</li>
-        </ul>
+         <li>Meet with Dr. Barefield</li>
+         <li>Build python script to run Cell Ranger on SRA data </li>
+         <li>Retrieve CellRanger output matrix files from GEO</li>
+        </ul>      
       </td>
       <td>
         <ul>
-         <li>Complete design doc</li>
-         <li>Retrieve SRA data + determine SRA data type </li>
-         <li>Become familiar with Cell Ranger and Seraut + determine default parameters</li>
+         <li>Meet with Dr. Barefield</li>
+         <li>Build R script to perform clustering of scRNA-Seq data using Seraut</li>
         </ul>
       </td>
     </tr>

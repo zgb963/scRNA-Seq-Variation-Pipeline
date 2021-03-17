@@ -93,9 +93,21 @@ It is evident from the example of transitional cells that understanding the comp
     </tr>
     <tr>
      <td>March 28 </br> (Week 11)</td>
-      <td>tasks</td>
-      <td>tasks</td>
-      <td>tasks</td>
+      <td>
+        <ul>
+         <li>Test/debug R script  with python script output data</li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+         <li>Test/debug R script  with python script output data</li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+         <li>Test/debug  Python script with SRA data</li>
+        </ul>
+      </td>
     </tr>
     <tr>
      <td>April 4 </br> (Week 12)</td>

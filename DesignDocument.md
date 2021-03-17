@@ -1,3 +1,5 @@
+ # scRNA-Seq Variation in Mouse Heart Pipeline
+
  # Overview #
 
 Dr. Barefield’s Lab (Barefield Lab) is interested in the heterogeneity of cells within the CCS. The Cardiac Conduction System (CCS) is a group of specialized muscle cells found in the heart’s walls. These muscle cells send signals to the rest of the heart muscle, which causes a contraction. Their distinct components include the sinoatrial node (SAN), the atrioventricular node/His bundle(AVN/His), and Purkinje fiber (PF) regions. The cells within these components were typically thought to be “homogeneous”. But each component of the CCS consists of unique cardiac cell types with their own physiological properties. Therefore, these components have significant cellular heterogeneity. The analysis of individual single cells within the CCS is important to discover the mechanisms of the heart not seen by studying a bulk population of cardiac cells.
@@ -17,3 +19,75 @@ Despite the vast array of cell-type heterogeneity within CCS components, transit
 The obstacles in studying CCS cell-type heterogeneity can be overcome using  single-cell RNA-sequencing (scRNA-Seq). Single-cell RNA-Sequencing allows for genome-wide analysis of gene expression at single-cell resolution. The project objective is to assess the transcriptional landscape of the CCS at single-cell resolution by single-cell RNA-sequencing using a developing mouse heart as a model. The project is important because not only will it increase our knowledge of CCS cell-type heterogeneity by  providing a foundation for further cell specification, patterning, and function, but  will also contribute to our knowledge of cardiac diseases. 
 
 It is evident from the example of transitional cells that understanding the complex cell-type heterogeneity of CCS components can greatly contribute to our knowledge of cardiac diseases as well as our ability to diagnose and treat those suffering from such clinical disorders. 
+
+# Goals # 
+
+* Obtain FASTQ files from SRA in Gene Expression Omnibus (GEO)
+* De-multiplex and map scRNA-Seq data to the mouse genome using Cell Ranger 
+* Perform clustering of scRNA-Seq data using Seraut
+* Quantify scRNA-Seq data
+* Report significant output including standard deviations of gene expression of cells in clusters of interest
+
+# Non-Goals #
+
+* Categorize CCS component cell-types through specification, patterning, and function
+* Determine correlation between disease and specific cell-types
+
+# Proposed Solution #
+
+# Milestones # 
+<table>
+  <tbody>
+    <tr>
+      <th>Week</th>
+      <th>Genevieve</th>
+      <th>Aditi</th>
+      <th>Ade</th>
+    </tr>
+    <tr>
+     <td>March 14 </br> (Week 9)</td>
+      <td>tasks</td>
+      <td>tasks</td>
+      <td>tasks</td>
+    </tr>
+    <tr>
+     <td>March 21 </br> (Week 10)</td>
+      <td>tasks</td>
+      <td>tasks</td>
+      <td>tasks</td>
+    </tr>
+    <tr>
+     <td>March 28 </br> (Week 11)</td>
+      <td>tasks</td>
+      <td>tasks</td>
+      <td>tasks</td>
+    </tr>
+    <tr>
+     <td>April 4 </br> (Week 12)</td>
+      <td>tasks</td>
+      <td>tasks</td>
+      <td>tasks</td>
+    </tr>
+    <tr>
+     <td>April 11 </br> (Week 13)</td>
+      <td>tasks</td>
+      <td>tasks</td>
+      <td>tasks</td>
+    </tr>
+    <tr>
+     <td>April 18 </br> (Week 14)</td>
+      <td>tasks</td>
+      <td>tasks</td>
+      <td>tasks</td>
+    </tr>
+    <tr>
+     <td>April 25 </br> (Week 15)</td>
+      <td>tasks</td>
+      <td>tasks</td>
+      <td>tasks</td>
+    </tr>
+  </tbody>
+</table>
+
+
+

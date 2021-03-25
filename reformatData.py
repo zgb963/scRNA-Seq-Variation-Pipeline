@@ -4,7 +4,6 @@ import os
 def renameFastqs(SRRs):
     current_path = os.getcwd()                                               #change into SRA data folder directory
     folder = "/mouse_heart_SRA_data"
-    os.mkdir(current_path + folder)
     os.chdir(current_path + folder)
 
     for i in range(0,len(SRRs)):

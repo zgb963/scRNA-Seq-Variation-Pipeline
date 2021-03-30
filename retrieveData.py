@@ -1,7 +1,5 @@
 import os
-from Bio import Entrez
-from Bio.Seq import Seq
-from Bio import SeqIO
+
 
 #function to retrieve mouse heart data from NCBI's SRA
 def getSRAdata(SRRs):

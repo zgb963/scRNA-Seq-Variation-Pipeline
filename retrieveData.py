@@ -1,5 +1,7 @@
 import os
-
+from Bio import Entrez
+from Bio.Seq import Seq
+from Bio import SeqIO
 
 #function to retrieve mouse heart data from NCBI's SRA
 def getSRAdata(SRRs):
@@ -26,6 +28,6 @@ def getSRAdata(SRRs):
 
     os.chdir(current_path)                                                     #change to current directory
 
-#TO DOs: Implement getRefGenome
+#TO DOs: Implement getRefGenome and pull out CDS
 #function to retrieve mouse reference genome index
 #def getRefGenome(): ...

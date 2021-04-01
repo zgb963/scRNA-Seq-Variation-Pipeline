@@ -11,7 +11,7 @@ def renameFastqs(SRRs):
         #rename fastq files to cellranger compatitable format
         rename_fastq1 = 'mv ' + SRRs[i] + '.1_1.fastq ' + SRRs[i] + '.1' + '_S1_L00' + str(SRRs[i][-1]) + '_R1' + '_001.fastq'
         rename_fastq2 = 'mv ' + SRRs[i] + '.1_2.fastq ' + SRRs[i] + '.1' + '_S1_L00' + str(SRRs[i][-1]) + '_R2' + '_001.fastq'
-        rename_fastq3 = 'mv ' + SRRs[i] + '.1_3.fastq ' + SRRs[i] + '.1' + '_S1_L00' + str(SRRs[i][-1]) + '_R3' + '_001.fastq'
+        rename_fastq3 = 'mv ' + SRRs[i] + '.1_3.fastq ' + SRRs[i] + '.1' + '_S1_L00' + str(SRRs[i][-1]) + '_I3' + '_001.fastq'
 
 
         os.system(rename_fastq1)

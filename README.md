@@ -19,5 +19,11 @@ pipeline.py
 
 To run this repo, please clone this github to your current working directory:
 
-`https://github.com/Genevieve-Baddoo/hcmvminiproject.git`
+`https://github.com/Genevieve-Baddoo/scRNA-Seq-Variation-Pipeline.git`
+
+Change directory:
+`cd scRNA-Seq-Variation-Pipeline`
+
+
+
 

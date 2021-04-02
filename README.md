@@ -24,6 +24,6 @@ To run this repo, please clone this github to your current working directory:
 Change directory:
 `cd scRNA-Seq-Variation-Pipeline`
 
-
+**Next, run pipeline.py file from the scRNA-Seq-Variation-Pipeline directory**
 
 

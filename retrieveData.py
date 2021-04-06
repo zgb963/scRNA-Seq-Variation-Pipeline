@@ -26,8 +26,18 @@ def getSRAdata(SRRs):
 
     os.chdir(current_path)                                                     #change to current directory
 
-#TO DOs: Implement getRefGenome
+
 #function to retrieve mouse reference genome index
-#def getRefGenome(): ...
-#cell ranger has reference mouse genome!
+def getRefGenome():
+    current_path = os.getcwd()                                                  #create and change to mouse genome folder directory
+    folder = "/mouse_genome"
+    os.mkdir(current_path + folder)
+    os.chdir(current_path + folder)
+
+    wget_genome = 'wget https://cf.10xgenomics.com/supp/cell-exp/refdata-gex-mm10-2020-A.tar.gz'
+    os.system(wget_genome)
+
+    os.chdir(current_path)                                                       #change to current directory
+
+
 #use wget https://cf.10xgenomics.com/supp/cell-exp/refdata-gex-GRCh38-2020-A.tar.gz

@@ -34,7 +34,7 @@ def getRefGenome():
     os.mkdir(current_path + folder)
     os.chdir(current_path + folder)
 
-    wget_genome = 'wget https://cf.10xgenomics.com/supp/cell-exp/refdata-gex-mm10-2020-A.tar.gz'
+    wget_genome = 'wget https://cf.10xgenomics.com/supp/cell-exp/refdata-gex-mm10-2020-A.tar.gz'  #retrieve cell ranger mouse genome
     decompress_genome = 'tar -zxvf refdata-gex-mm10-2020-A.tar.gz'
     os.system(wget_genome)
     os.system(decompress_genome)
@@ -42,4 +42,4 @@ def getRefGenome():
     os.chdir(current_path)                                                       #change to current directory
 
 
-#use wget https://cf.10xgenomics.com/supp/cell-exp/refdata-gex-GRCh38-2020-A.tar.gz
+

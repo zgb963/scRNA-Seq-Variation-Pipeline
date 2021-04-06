@@ -35,7 +35,9 @@ def getRefGenome():
     os.chdir(current_path + folder)
 
     wget_genome = 'wget https://cf.10xgenomics.com/supp/cell-exp/refdata-gex-mm10-2020-A.tar.gz'
+    decompress_genome = 'tar -zxvf refdata-gex-mm10-2020-A.tar.gz'
     os.system(wget_genome)
+    os.system(decompress_genome)
 
     os.chdir(current_path)                                                       #change to current directory
 

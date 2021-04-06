@@ -29,3 +29,5 @@ def getSRAdata(SRRs):
 #TO DOs: Implement getRefGenome
 #function to retrieve mouse reference genome index
 #def getRefGenome(): ...
+#cell ranger has reference mouse genome!
+#use wget https://cf.10xgenomics.com/supp/cell-exp/refdata-gex-GRCh38-2020-A.tar.gz

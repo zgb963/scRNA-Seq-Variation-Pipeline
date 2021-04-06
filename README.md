@@ -1,1 +1,29 @@
-The goal of this project is to build a pipeline to re-map, cluster, and quantify scRNA-Seq data from Goodyer et al. to identify genes with high expression variance within mouse heart cell clusters.
+This pipeline is built to re-map, cluster, and quantify scRNA-Seq data from Goodyer et al. to identify genes with high expression variance within mouse heart cell clusters.
+
+
+Software Tools Required
+=========
+
+* Linux/Unix
+* Python3
+* Fastq dump
+* Cell Ranger
+* Seraut
+* R
+
+Main Python Script
+==================
+
+pipeline.py
+----------------
+
+To run this repo, please clone this github to your current working directory:
+
+`https://github.com/Genevieve-Baddoo/scRNA-Seq-Variation-Pipeline.git`
+
+Change directory:
+`cd scRNA-Seq-Variation-Pipeline`
+
+**Next, run pipeline.py file from the scRNA-Seq-Variation-Pipeline directory**
+
+

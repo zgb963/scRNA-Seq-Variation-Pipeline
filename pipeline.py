@@ -14,6 +14,7 @@ SRRs = ['SRR9290711', 'SRR9290713', 'SRR9290715', 'SRR9290717']
 
 #retrieve mouse heart data from NCBI's SRA + retrieve mouse reference genome
 retrieveData.getSRAdata(SRRs)
+retrieveData.getRefGenome()
 
 #rename fastq files to CellRanger compatabile format
 reformatData.renameFastqs(SRRs)

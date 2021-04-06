@@ -1,7 +1,7 @@
 #set up environment
 import retrieveData
 import reformatData
-
+import mapReads
 
 #GEO Accession  -- CCS Component -- SRA run (raw data)
 #GSM3885058     -- Zone I: SAN region -- SRR9290711
@@ -19,4 +19,5 @@ retrieveData.getRefGenome()
 #rename fastq files to CellRanger compatabile format
 reformatData.renameFastqs(SRRs)
 
-
+#map sample reads using cell ranger tool
+mapReads.runCellRanger(SRRs)

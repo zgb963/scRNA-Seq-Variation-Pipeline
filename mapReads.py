@@ -8,10 +8,3 @@ def runCellRanger(SRRs):
         sample = SRR
         cellranger_cmd = 'cellranger count --id=' + id + ' --fastqs=' + fastqs_path + ' --sample=' + sample + ' --genome=' + genome
         os.system(cellranger_cmd)
-
-
-
-
-
-
-

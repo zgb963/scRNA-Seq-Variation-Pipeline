@@ -33,5 +33,3 @@ Change directory:
 `cd scRNA-Seq-Variation-Pipeline`
 
 **Next, run pipeline.py file from the scRNA-Seq-Variation-Pipeline directory**
-
-

@@ -5,6 +5,7 @@ def runCellRanger(SRRs):
     id  = current_path + '/cellranger_output'                            #path designated for cellranger output
     fastqs_path = current_path + '/mouse_heart_SRA_data'                 #path to folder containing fastqs from SRA
     genome = current_path + '/mouse_genome/refdata-gex-mm10-2020-A'      #path to mouse genome
-    samples = SRRs
+    samples = ' '.join([str(SRR) for SRR in SRRs])
+    samples = samples.replace(' ', ',')
     cellranger_cmd = 'cellranger count --id=' + id + ' --fastqs=' + fastqs_path + ' --sample=' + samples + ' --genome=' + genome
     os.system(cellranger_cmd)

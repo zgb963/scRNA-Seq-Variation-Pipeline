@@ -9,7 +9,7 @@ The Cardiac Conduction System (CCS) is a group of specialized muscle cells found
 The Barefield lab is interested in the heterogeneity of cells within areas of the heart that are typically considered "homogeneous" tissues. A Python wrapper was developed to automate the execution of various Bioinformatics software tools and to utlimatley help the Barefield lab study cell-type heterogeniety within mouse heart. The scRNA-Seq-Variation-Pipeline is built to re-map, cluster, and quantify scRNA-Seq data from Goodyer et al. (https://www.ahajournals.org/doi/10.1161/CIRCRESAHA.118.314578) to identify genes with high expression variance within mouse heart cell clusters.
 
 
-Software Tools Required
+## Software Tools Required
 =========
 
 * Linux/Unix
@@ -20,7 +20,7 @@ Software Tools Required
 * Seraut
 
 
-Main Python Script
+## Main Python Script
 ==================
 
 pipeline.py

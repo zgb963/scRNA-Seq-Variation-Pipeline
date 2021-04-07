@@ -24,11 +24,18 @@ The Barefield lab is interested in the heterogeneity of cells within areas of th
 pipeline.py
 ----------------
 
-To run this repo, please clone this github to your current working directory:
+
+## Run The Pipeline: 
+
+<h5> Clone Repository: </h5> 
 
 `https://github.com/Genevieve-Baddoo/scRNA-Seq-Variation-Pipeline.git`
 
-Change directory:
-`cd scRNA-Seq-Variation-Pipeline`
+<h5> Move Into Project Directory: </h5>
 
-**Next, run pipeline.py file from the scRNA-Seq-Variation-Pipeline directory**
+`cd scRNA-Seq-Variation-Pipeline/`
+
+<h5> Run Pipeline: </h5>
+
+`python3 pipeline.py`
+

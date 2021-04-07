@@ -6,7 +6,7 @@ The Cardiac Conduction System (CCS) is a group of specialized muscle cells found
 
 ![cool picture that for some reason did not show up](https://www.ahajournals.org/cms/asset/f9188658-d8cb-4b61-8742-894c27847acc/379ga1.jpg)
 
-The Barefield lab is interested in the heterogeneity of cells within areas of the heart that are typically considered "homogeneous" tissues. A Python wrapper was developed to automate the execution of various Bioinformatics software tools and to utlimatley help the Barefield lab study cell-type heterogeniety within mouse heart. The scRNA-Seq-Variation-Pipeline is built to re-map, cluster, and quantify scRNA-Seq data from Goodyer et al. to identify genes with high expression variance within mouse heart cell clusters.
+The Barefield lab is interested in the heterogeneity of cells within areas of the heart that are typically considered "homogeneous" tissues. A Python wrapper was developed to automate the execution of various Bioinformatics software tools and to utlimatley help the Barefield lab study cell-type heterogeniety within mouse heart. The scRNA-Seq-Variation-Pipeline is built to re-map, cluster, and quantify scRNA-Seq data from Goodyer et al. (https://www.ahajournals.org/doi/10.1161/CIRCRESAHA.118.314578) to identify genes with high expression variance within mouse heart cell clusters.
 
 
 Software Tools Required

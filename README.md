@@ -10,7 +10,6 @@ The Barefield lab is interested in the heterogeneity of cells within areas of th
 
 
 ## Software Tools Required
-=========
 
 * Linux/Unix
 * Python3
@@ -21,7 +20,6 @@ The Barefield lab is interested in the heterogeneity of cells within areas of th
 
 
 ## Main Python Script
-==================
 
 pipeline.py
 ----------------

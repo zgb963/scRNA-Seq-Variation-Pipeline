@@ -39,5 +39,5 @@ Important files and outputs
 ==================
 
 * mapReads.py
->contains commands
+>contains cell ranger command to map sequencing reads to the mouse genome
 

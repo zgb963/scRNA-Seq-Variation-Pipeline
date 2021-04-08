@@ -39,7 +39,7 @@ Important files and outputs
 ==================
 
 * retrieveData.py
->contains
+>retrieves mouse heart data from NCBI's SRA and retrieves Cell Ranger reference mouse genome
 
 
 

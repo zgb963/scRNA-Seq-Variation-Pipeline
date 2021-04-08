@@ -38,6 +38,12 @@ The Barefield lab is interested in the heterogeneity of cells within areas of th
 Important files and outputs
 ==================
 
+* retrieveData.py
+>contains
+
+
+
+
 * mapReads.py
 >contains Cell Ranger command to map sequencing reads to the mouse reference genome. Creates Cell Ranger output file
 

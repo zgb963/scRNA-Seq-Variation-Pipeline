@@ -39,7 +39,7 @@ Important files and outputs
 ==================
 
 * retrieveData.py
->retrieves mouse heart data from NCBI's SRA and retrieves Cell Ranger reference mouse genome
+>retrieves mouse heart data from NCBI's SRA and retrieves Cell Ranger reference mouse genome. Creates mouse heart SRA data output folder
 
 * reformatData.py
 >reformats fastq files for Cell Ranger input 

@@ -38,4 +38,6 @@ The Barefield lab is interested in the heterogeneity of cells within areas of th
 Important files and outputs
 ==================
 
+* mapReads.py
+>contains commands
 

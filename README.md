@@ -1,5 +1,6 @@
 # scRNA-Seq Variation in Mouse Heart Pipeline
 
+
 ## Project Background 
 
 The Cardiac Conduction System (CCS) is a group of specialized muscle cells found in the heart wall and is essential in heart development and function Their distinct components include the sinoatrial node (SAN), the atrioventricular node/His bundle(AVN/His), and Purkinje fiber (PF) regions. Cells within these components were typically thought to be “homogeneous”, but recent findings have disproved this. Each component of the CCS consists of unique cardiac cell types with their own physiological properties revealing that there is significant “intracomponent cell-type heterogeneity“ within each CCS component itself. Historically the CCS has been challenging to examine due to certain obstacles, which include small cell numbers, large cell-type heterogeneity, complex anatomy, and difficulty in isolation however new technologies such as Single cell RNA sequencing (scRNA-Seq) can identify expression differences between individual cells in tissues previously thought to be homogenous.
@@ -19,12 +20,6 @@ The Barefield lab is interested in the heterogeneity of cells within areas of th
 * Seraut
 
 
-## Main Python Script
-
-pipeline.py
-----------------
-
-
 ## Run The Pipeline: 
 
 <h5> Clone Repository: </h5> 
@@ -38,4 +33,7 @@ pipeline.py
 <h5> Run Pipeline: </h5>
 
 `python3 pipeline.py`
+
+
+
 

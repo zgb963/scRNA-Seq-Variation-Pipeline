@@ -41,9 +41,9 @@ Important files and outputs
 * retrieveData.py
 >retrieves mouse heart data from NCBI's SRA and retrieves Cell Ranger reference mouse genome
 
-
-
+* reformatData.py
+>reformats fastq files for Cell Ranger input 
 
 * mapReads.py
->contains Cell Ranger command to map sequencing reads to the mouse reference genome. Creates Cell Ranger output file
+>contains Cell Ranger command to map sequencing reads to the mouse reference genome. Creates Cell Ranger output folder
 

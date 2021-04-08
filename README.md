@@ -35,5 +35,7 @@ The Barefield lab is interested in the heterogeneity of cells within areas of th
 `python3 pipeline.py`
 
 
+Important files and outputs
+==================
 
 

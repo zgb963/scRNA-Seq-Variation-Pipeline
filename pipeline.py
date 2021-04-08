@@ -19,5 +19,5 @@ retrieveData.getRefGenome()
 #rename fastq files to CellRanger compatabile format
 reformatData.renameFastqs(SRRs)
 
-#map sample reads using cell ranger tool
+#map sample reads using Cell Ranger tool and create output folder
 mapReads.runCellRanger(SRRs)

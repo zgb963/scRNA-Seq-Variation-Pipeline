@@ -47,3 +47,5 @@ Important files and outputs
 * mapReads.py
 >contains Cell Ranger command to map sequencing reads to the mouse reference genome. Creates Cell Ranger output folder
 
+* clusteringSeraut
+>contains results from quantifying the TPM of each CDS in each transcriptome with kallisto

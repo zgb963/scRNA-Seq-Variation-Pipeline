@@ -47,5 +47,5 @@ Important files and outputs
 * mapReads.py
 >contains Cell Ranger command to map sequencing reads to the mouse reference genome. Creates Cell Ranger output folder
 
-* clusteringSeurat
+* clusteringSeurat.R
 >runs R package called Seurat that clusters mouse heart data from Cell Ranger output

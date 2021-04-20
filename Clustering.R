@@ -29,6 +29,8 @@ mouseheart <- NormalizeData(mouseheart)
 
 mouseheart <- FindVariableFeatures(mouseheart, selection.method = "vst", nfeatures = 2000)
 
+#Identify highly variable features/genes
+
 # Identify the 10 most highly variable genes
 top10 <- head(VariableFeatures(mouseheart), 10)
 

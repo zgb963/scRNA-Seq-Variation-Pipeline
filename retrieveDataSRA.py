@@ -1,7 +1,7 @@
 import os
 
 
-#function to retrieve mouse heart data from NCBI's SRA
+#function to retrieve mouse heart data from NCBI's SRA database
 def getSRAdata(SRRs):
     current_path = os.getcwd()                                                   #create and change to SRA data folder directory
     folder = "/mouse_heart_SRA_data"

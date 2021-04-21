@@ -1,5 +1,5 @@
 #set up environment
-import retrieveData
+import retrieveDataSRA
 import reformatData
 import mapReads
 
@@ -13,11 +13,11 @@ import mapReads
 SRRs = ['SRR9290711', 'SRR9290713', 'SRR9290715', 'SRR9290717']
 
 #retrieve mouse heart data from NCBI's SRA + retrieve mouse reference genome
-retrieveData.getSRAdata(SRRs)
-retrieveData.getRefGenome()
+retrieveDataSRA.getSRAdata(SRRs)
+retrieveDataSRA.getRefGenome()
 
-#rename fastq files to CellRanger compatabile format
+#rename fastq files to Cell Ranger compatabile format
 reformatData.renameFastqs(SRRs)
 
-#map sample reads using Cell Ranger tool and create output folder
+#map sample reads using Cell Ranger and create Cell Ranger output folder
 mapReads.runCellRanger(SRRs)

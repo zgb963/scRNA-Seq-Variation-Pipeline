@@ -12,6 +12,8 @@ def getGEOdata():
     os.chdir(current_path + folder)
 
     wget_GEO = "wget 'ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE132nnn/GSE132658/suppl/GSE132658_RAW.tar'"
+    decompress_GEO = "tar -xvf GSE132658_RAW.tar"
     os.system(wget_GEO)
+    os.system(decompress_GEO)
 
     os.chdir(current_path)                                                     #change to current directory

@@ -5,7 +5,7 @@ library(patchwork)
 
 #get full directory to mouse heart GEO data 
 current_path<-getwd()
-full_path<-paste(current_path, "/scRNA-Seq-Variation-Pipeline/mouse_heart_GEO_data/", sep="") 
+full_path<-paste(current_path, "/mouse_heart_GEO_data/", sep="") 
 
 #For the UMAP step we will need to incorporate a way to run py_install(packages = 'umap-learn')
 

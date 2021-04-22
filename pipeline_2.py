@@ -11,6 +11,6 @@ import retrieveDataGEO
 #retrieve mouse heart data from NCBI's GEO database *synonymous with Cell Ranger output*
 retrieveDataGEO.getGEOdata()
 
-#one GEO files are retrieved, run Clustering. R file
+#one GEO files are retrieved, run Clustering.R 
 #perform clustering and other statistical analyses using Seurat
 

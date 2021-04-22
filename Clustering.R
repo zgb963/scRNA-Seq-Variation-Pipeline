@@ -2,8 +2,10 @@ library(dplyr)
 library(Seurat)
 library(patchwork)
 
-# Load the PBMC dataset
-mouseheart.data <- Read10X("C:/Users/willi/Downloads/pbmc_multimodal.h5seurat/")
+#For the UMAP step we will need to incorporate a way to run py_install(packages = 'umap-learn')
+
+# Loading mouseheart data (directory will change)
+mouseheart.data <- Read10X("/homes/data//geo_heart/")
 # Initialize the Seurat object with the raw (non-normalized data).
 mouseheart <- CreateSeuratObject(counts = mouse.data, project = "pbmc3k", min.cells = 3, min.features = 200)
 mouseheart
@@ -23,7 +25,8 @@ plot1 + plot2
 
 mouseheart <- subset(mouseheart, subset = nFeature_RNA > 200 & nFeature_RNA < 2500 & percent.mt < 5)
 
-mouseheart <- NormalizeData(mouseheart, normalization.method = "LogNormalize", scale.factor = 10000)
+#perimeters for mouseheartdata
+#mouseheart <- NormalizeData(mouseheart, normalization.method = "LogNormalize", scale.factor = 10000)
 
 mouseheart <- NormalizeData(mouseheart)
 
@@ -38,3 +41,9 @@ top10 <- head(VariableFeatures(mouseheart), 10)
 plot1 <- VariableFeaturePlot(mouseheart)
 plot2 <- LabelPoints(plot = plot1, points = top10, repel = TRUE)
 plot1 + plot2
+
+#Uniform Manifold Approximation and projection to do dimensional reduction
+#mouseheart <- RunUMAP(mouseheart, dims = 1:10)
+
+#To create the individual clusters from the UMAP done
+#DimPlot(mouseheart, reduction = 'umap')

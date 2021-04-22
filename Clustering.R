@@ -5,14 +5,15 @@ library(patchwork)
 
 #get full directory to mouse heart GEO data 
 current_path<-getwd()
-full_path<-paste(current_path, "/scRNA-Seq-Variation-Pipeline/mouse_heart_GEO_data/", sep="") 
+full_path<-paste(current_path, "/mouse_heart_GEO_data/", sep="") 
 
 #For the UMAP step we will need to incorporate a way to run py_install(packages = 'umap-learn')
 
-#Loading mouse heart data
+#load mouse heart data
 mouseheart.data<-Read10X(full_path)
-# Initialize the Seurat object with the raw (non-normalized data).
-mouseheart <- CreateSeuratObject(counts = mouse.data, project = "pbmc3k", min.cells = 3, min.features = 200)
+
+#initialize the Seurat object with the raw (non-normalized data)
+mouseheart<-CreateSeuratObject(counts = mouseheart.data, project = "mhscRNA", min.cells = 3, min.features = 200)
 mouseheart
 
 # The [[ operator can add columns to object metadata. This is a great place to stash QC stats

@@ -1,6 +1,6 @@
 #set up environment
 import retrieveDataSRA
-import reformatData
+import reformatDataSRA
 import mapReads
 
 #GEO Accession  -- CCS Component -- SRA run (raw data)
@@ -17,7 +17,7 @@ retrieveDataSRA.getSRAdata(SRRs)
 retrieveDataSRA.getRefGenome()
 
 #rename fastq files to Cell Ranger compatabile format
-reformatData.renameFastqs(SRRs)
+reformatDataSRA.renameFastqs(SRRs)
 
 #map sample reads using Cell Ranger and create Cell Ranger output folder
 mapReads.runCellRanger(SRRs)

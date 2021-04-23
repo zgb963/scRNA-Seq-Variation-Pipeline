@@ -1,6 +1,6 @@
 import os
 
-
+#function to reame fastq files to original format
 def renameFastqs(SRRs):
     current_path = os.getcwd()                                               #change into SRA data folder directory
     folder = "/mouse_heart_SRA_data"

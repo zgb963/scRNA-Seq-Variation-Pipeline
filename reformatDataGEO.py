@@ -22,13 +22,13 @@ def moveGEO():
     #move files into designated folders
     for filename in os.listdir(current_path + folder):
         if('SAN' in filename):
-            os.rename('GSM3885058_SANbarcodes.tsv.gz', current_path + folder + SAN_folder)
-            os.rename('GSM3885058_SANgenes.tsv.gz', current_path + folder + SAN_folder)
-            os.rename('GSM3885058_SANmatrix.mtx.gz', current_path + folder + SAN_folder)
+            os.rename('GSM3885058_SANbarcodes.tsv.gz', current_path + folder + SAN_folder + '/GSM3885058_SANbarcodes.tsv.gz')
+            os.rename('GSM3885058_SANgenes.tsv.gz', current_path + folder + SAN_folder + '/GSM3885058_SANgenes.tsv.gz')
+            os.rename('GSM3885058_SANmatrix.mtx.gz', current_path + folder + SAN_folder + '/GSM3885058_SANmatrix.mtx.gz')
         elif('AVN' in filename):
-            os.rename('GSM3885059_AVNbarcodes.tsv.gz', current_path + folder + AVN_folder)
-            os.rename('GSM3885059_AVNgenes.tsv.gz', current_path + folder + AVN_folder)
-            os.rename('/GSM3885059_AVNmatrix.mtx.gz', current_path + folder + AVN_folder)
+            os.rename('GSM3885059_AVNbarcodes.tsv.gz', current_path + folder + AVN_folder + '/GSM3885059_AVNbarcodes.tsv.gz')
+            os.rename('GSM3885059_AVNgenes.tsv.gz', current_path + folder + AVN_folder + '/GSM3885059_AVNgenes.tsv.gz' )
+            os.rename('GSM3885059_AVNmatrix.mtx.gz', current_path + folder + AVN_folder + '/GSM3885059_AVNmatrix.mtx.gz')
         elif('LPF' in filename):
             os.rename('GSM3885060_LPFbarcodes.tsv.gz', current_path + folder + LPF_folder)
             os.rename('GSM3885060_LPFgenes.tsv.gz', current_path + folder + LPF_folder)

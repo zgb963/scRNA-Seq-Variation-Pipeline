@@ -13,10 +13,10 @@ def moveGEO():
     RPF_folder = '/RPF'
 
     #create folders
-    os.mkdir(SAN_folder)
-    os.mkdir(AVN_folder)
-    os.mkdir(LPF_folder)
-    os.mkdir(RPF_folder)
+    os.mkdir(current_path + folder + SAN_folder)
+    os.mkdir(current_path + folder + AVN_folder)
+    os.mkdir(current_path + folder + LPF_folder)
+    os.mkdir(current_path + folder + RPF_folder)
 
     #move files into designated folders
     for filename in os.listdir(current_path + folder):

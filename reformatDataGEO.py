@@ -1,5 +1,4 @@
 import os
-import shutil
 
 #function to rename GEO barcodes, genes, and matrix files and prepare appropriate folders for Seurat
 def moveGEO():

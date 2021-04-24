@@ -5,12 +5,15 @@ library(patchwork)
 
 #get full directory to mouse heart GEO data 
 current_path<-getwd()
-full_path<-paste(current_path, "/mouse_heart_GEO_data/", sep="") 
+SAN_path<-paste(current_path, "/mouse_heart_GEO_data/SAN_GEO", sep="")    #path to SAN GEO data 
+AVN_path<-paste(current_path, "/mouse_heart_GEO_data/AVN_GEO", sep="")    #path to AVN GEO data 
 
 #For the UMAP step we will need to incorporate a way to run py_install(packages = 'umap-learn')
 
 #load mouse heart data
-mouseheart.data<-Read10X(full_path)
+zoneI.data<-Read10X(SAN_path)
+zoneII.data<-Read10X(AVN_path)
+
 
 #initialize the Seurat object with the raw (non-normalized data)
 mouseheart<-CreateSeuratObject(counts = mouseheart.data, project = "mhscRNA", min.cells = 3, min.features = 200)

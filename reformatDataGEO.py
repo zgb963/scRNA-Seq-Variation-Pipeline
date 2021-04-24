@@ -20,19 +20,19 @@ def moveGEO():
 
     #move files into designated folders
     os.system('mv ' + current_path + folder + '/GSM3885058_SANbarcodes.tsv.gz ' + current_path + folder + SAN_folder + '/barcodes.tsv.gz')
-    os.system('mv ' + current_path + folder + '/GSM3885058_SANgenes.tsv.gz ' + current_path + folder + SAN_folder  + '/genes.tsv.gz')
+    os.system('mv ' + current_path + folder + '/GSM3885058_SANgenes.tsv.gz ' + current_path + folder + SAN_folder  + '/features.tsv.gz')
     os.system('mv ' + current_path + folder + '/GSM3885058_SANmatrix.mtx.gz ' + current_path + folder + SAN_folder  + '/matrix.mtx.gz')
 
     os.system('mv ' + current_path + folder + '/GSM3885059_AVNbarcodes.tsv.gz ' + current_path + folder + AVN_folder + '/barcodes.tsv.gz')
-    os.system('mv ' + current_path + folder + '/GSM3885059_AVNgenes.tsv.gz ' + current_path + folder + AVN_folder  + '/genes.tsv.gz')
+    os.system('mv ' + current_path + folder + '/GSM3885059_AVNgenes.tsv.gz ' + current_path + folder + AVN_folder  + '/features.tsv.gz')
     os.system('mv ' + current_path + folder + '/GSM3885059_AVNmatrix.mtx.gz ' + current_path + folder + AVN_folder + '/matrix.mtx.gz')
 
     os.system('mv ' + current_path + folder + '/GSM3885060_LPFbarcodes.tsv.gz ' + current_path + folder + LPF_folder + '/barcodes.tsv.gz')
-    os.system('mv ' + current_path + folder + '/GSM3885060_LPFgenes.tsv.gz ' + current_path + folder + LPF_folder  + '/genes.tsv.gz')
+    os.system('mv ' + current_path + folder + '/GSM3885060_LPFgenes.tsv.gz ' + current_path + folder + LPF_folder  + '/features.tsv.gz')
     os.system('mv ' + current_path + folder + '/GSM3885060_LPFmatrix.mtx.gz ' + current_path + folder + LPF_folder + '/matrix.mtx.gz')
 
     os.system('mv ' + current_path + folder + '/GSM3885061_RPFbarcodes.tsv.gz ' + current_path + folder + RPF_folder + '/barcodes.tsv.gz')
-    os.system('mv ' + current_path + folder + '/GSM3885061_RPFgenes.tsv.gz ' + current_path + folder + RPF_folder  + '/genes.tsv.gz')
+    os.system('mv ' + current_path + folder + '/GSM3885061_RPFgenes.tsv.gz ' + current_path + folder + RPF_folder  + '/features.tsv.gz')
     os.system('mv ' + current_path + folder + '/GSM3885061_RPFmatrix.mtx.gz ' + current_path + folder + RPF_folder + '/matrix.mtx.gz')
 
 

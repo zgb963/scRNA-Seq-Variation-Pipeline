@@ -7,6 +7,7 @@ library(patchwork)
 current_path<-getwd()
 SAN_path<-paste(current_path, "/mouse_heart_GEO_data/SAN_GEO", sep="")    #path to SAN GEO data 
 AVN_path<-paste(current_path, "/mouse_heart_GEO_data/AVN_GEO", sep="")    #path to AVN GEO data 
+full_path<-paste(current_path, "/mouse_heart_GEO_data/", sep="") 
 
 #For the UMAP step we will need to incorporate a way to run py_install(packages = 'umap-learn')
 

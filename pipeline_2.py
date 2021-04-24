@@ -1,5 +1,6 @@
 #set up environment
 import retrieveDataGEO
+import reformatDataGEO
 
 #GEO Accession  -- CCS Component -- SRA run (raw data)
 #GSM3885058     -- Zone I: SAN region -- SRR9290711
@@ -11,6 +12,8 @@ import retrieveDataGEO
 #retrieve mouse heart data from NCBI's GEO database *synonymous with Cell Ranger output*
 retrieveDataGEO.getGEOdata()
 
-#one GEO files are retrieved, run Clustering.R 
+#move barcode, genes, matrix files of each CCS component into designated folder (SAN,AVN,LPF,RPF)
+reformatDataGEO.moveGEO()
+
 #perform clustering and other statistical analyses using Seurat
 

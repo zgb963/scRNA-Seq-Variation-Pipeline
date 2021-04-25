@@ -3,7 +3,8 @@ library(dplyr)
 library(Seurat)
 library(patchwork)
 
-
+#run this line before running code
+reticulate::py_install(packages ='umap-learn')
 
 ### SETUP THE SEURAT OBJECT ###
 

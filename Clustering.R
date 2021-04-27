@@ -1,10 +1,12 @@
-#set up environment 
+#setwd("/homes/gbaddoo") set correct working directory before running lines below
+#set up environment and load packages
 library(dplyr)
 library(Seurat)
 library(patchwork)
 
-#run this line before running code
-reticulate::py_install(packages ='umap-learn')
+#run this line once before running code below (for umap plots)
+#reticulate::py_install(packages ='umap-learn')
+
 
 ### SETUP THE SEURAT OBJECT ###
 

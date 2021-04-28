@@ -17,6 +17,7 @@ current_path<-getwd()
 SAN_path<-paste(current_path, "/scRNA-Seq-Variation-Pipeline/mouse_heart_GEO_data/SAN_GEO", sep="")    #path to SAN GEO data 
 AVN_path<-paste(current_path, "/scRNA-Seq-Variation-Pipeline/mouse_heart_GEO_data/AVN_GEO", sep="")    #path to AVN GEO data 
 
+
 #run in terminal: 
 #SAN_path<-paste(current_path, "/mouse_heart_GEO_data/SAN_GEO", sep="")    #path to SAN GEO data 
 #AVN_path<-paste(current_path, "/mouse_heart_GEO_data/AVN_GEO", sep="")    #path to AVN GEO data 
@@ -77,14 +78,15 @@ zoneII <- FindVariableFeatures(zoneII, selection.method = "vst", nfeatures = 200
 top10zoneI <- head(VariableFeatures(zoneI), 10)
 top10zoneI
 top10zoneII <- head(VariableFeatures(zoneII), 10)
+top10zoneII
 
-#plot variable features with and without labels (ERROR * NEEDS TO BE FIXED)
+#plot variable features with and without labels 
 plot1 <- VariableFeaturePlot(zoneI)
-plot2 <- LabelPoints(plot = plot1, points = top10zoneI, repel = TRUE)
+plot2 <- LabelPoints(plot = plot1, points = top10zoneI, repel = FALSE)
 plot1 + plot2
 
 plot1 <- VariableFeaturePlot(zoneII)
-plot2 <- LabelPoints(plot = plot1, points = top10zoneII, repel = TRUE)
+plot2 <- LabelPoints(plot = plot1, points = top10zoneII, repel = FALSE)
 plot1 + plot2
 
 

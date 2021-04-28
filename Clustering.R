@@ -159,7 +159,23 @@ zoneII <- RunTSNE(zoneII,dims.use = 1:15, reduction.use = "pca")
 DimPlot(zoneII, reduction = "tsne")
 
 
+####Finding differentially expressed features (cluster biomarkers)########
 
+#cluster numbers described in Goodyer et al paper
+
+#find all markers of Cluster 9 in zone I
+cluster9.markers <- FindMarkers(zoneI, ident.1 = 9, min.pct = 0.25)
+head(cluster9.markers, n = 5)
+
+
+#find all markers of Cluster 4 in zone II
+cluster4.markers <- FindMarkers(zoneII, ident.1 = 9, min.pct = 0.25)
+head(cluster4.markers, n = 5)
+
+
+#find all markers of Cluster 13 in Zone III
+#cluster13.markers <- FindMarkers(zoneIII, ident.1 = 9, min.pct = 0.25)
+#head(cluster13.markers, n = 5)
 
 
 #Uniform Manifold Approximation and projection to do dimensional reduction

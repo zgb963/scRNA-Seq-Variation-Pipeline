@@ -7,33 +7,36 @@ library(patchwork)
 #run this line once before running code below (for umap plots)
 #reticulate::py_install(packages ='umap-learn')
 
-
 ### SETUP THE SEURAT OBJECT ###
 
 #get full directory to mouse heart GEO data 
 current_path<-getwd()
 
 #run in Rstudio: 
+#zoneI
 SAN_path<-paste(current_path, "/scRNA-Seq-Variation-Pipeline/mouse_heart_GEO_data/SAN_GEO", sep="")    #path to SAN GEO data 
+
+#zoneII
 AVN_path<-paste(current_path, "/scRNA-Seq-Variation-Pipeline/mouse_heart_GEO_data/AVN_GEO", sep="")    #path to AVN GEO data 
+
+#zoneIII
+LPF_path<-paste(current_path, "/scRNA-Seq-Variation-Pipeline/mouse_heart_GEO_data/LPF_GEO", sep="")    #path to LPF GEO data 
+RPF_path<-paste(current_path, "/scRNA-Seq-Variation-Pipeline/mouse_heart_GEO_data/RPF_GEO", sep="")    #path to RPF GEO data 
+
 
 
 #run in terminal: 
 #SAN_path<-paste(current_path, "/mouse_heart_GEO_data/SAN_GEO", sep="")    #path to SAN GEO data 
 #AVN_path<-paste(current_path, "/mouse_heart_GEO_data/AVN_GEO", sep="")    #path to AVN GEO data 
 
-#For the UMAP step we will need to incorporate a way to run py_install(packages = 'umap-learn')
 
 #load data
-
 zoneI.data<-Read10X(SAN_path)
 zoneII.data<-Read10X(AVN_path)
-
 
 #initialize the Seurat objects with the raw (non-normalized data)
 zoneI<-CreateSeuratObject(counts = zoneI.data, project = "zone I", min.cells = 3, min.features = 200)
 zoneII<-CreateSeuratObject(counts = zoneII.data, project = "zone II", min.cells = 3, min.features = 200)
-
 
 
 ### STANDARD PRE-PROCESSING WORKFLOW ###
@@ -114,15 +117,15 @@ print(zoneI[["pca"]], dims = 1:5, nfeatures = 5)
 # NOTE: This process can take a long time for big datasets, comment out for expediency. More
 # approximate techniques such as those implemented in ElbowPlot() can be used to reduce
 # computation time
-zoneI <- JackStraw(zoneI, num.replicate = 100)
-zoneI <- ScoreJackStraw(zoneI, dims = 1:20)
+#zoneI <- JackStraw(zoneI, num.replicate = 100)
+#zoneI <- ScoreJackStraw(zoneI, dims = 1:15)
 
-JackStrawPlot(zoneI, dims = 1:15)
+#JackStrawPlot(zoneI, dims = 1:15)
 
-zoneII <- JackStraw(zoneII, num.replicate = 100)
-zoneII <- ScoreJackStraw(zoneII, dims = 1:20)
+#zoneII <- JackStraw(zoneII, num.replicate = 100)
+#zoneII <- ScoreJackStraw(zoneII, dims = 1:20)
 
-JackStrawPlot(zoneII, dims = 1:15)
+#JackStrawPlot(zoneII, dims = 1:15)
 
 #heuristic alternative to JackStraw  
 ElbowPlot(zoneI)
@@ -131,11 +134,16 @@ ElbowPlot(zoneII)
 
 
 ### CLUSTER THE CELLS ###
-zoneI <- FindNeighbors(zoneI, dims = 1:10)
+zoneI <- FindNeighbors(zoneI, dims = 1:14)
 zoneI <- FindClusters(zoneI, resolution = 0.5)
+tabI<-table(Idents(zoneI))
+tabI
 
 zoneII <- FindNeighbors(zoneII, dims = 1:10)
 zoneII <- FindClusters(zoneII, resolution = 0.5)
+
+tabII<-table(Idents(zoneII))
+tabII
 
 #look at cluster IDs of the first 5 cells
 head(Idents(zoneI), 5)
@@ -150,7 +158,7 @@ head(Idents(zoneII), 5)
 #ISSUE: zoneI and zoneII have the same plots?
 
 zoneI <- RunUMAP(zoneI, dims = 1:50)
-zoneI <- RunTSNE(zoneI,dims.use = 1:10,reduction.use = "pca")
+zoneI <- RunTSNE(zoneI,dims.use = 1:15,reduction.use = "pca")
 DimPlot(zoneI, reduction = "tsne")
 
 

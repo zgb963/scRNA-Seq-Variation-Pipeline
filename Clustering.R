@@ -219,8 +219,8 @@ head(cluster4.markers, n = 5)
 
 
 #find all markers of Cluster 13 in Zone III
-#cluster13.markers <- FindMarkers(zoneIII, ident.1 = 9, min.pct = 0.25)
-#head(cluster13.markers, n = 5)
+cluster13.markers <- FindMarkers(zoneIII, ident.1 = 9, min.pct = 0.25)
+head(cluster13.markers, n = 5)
 
 
 

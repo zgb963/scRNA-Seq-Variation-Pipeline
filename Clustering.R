@@ -31,12 +31,27 @@ RPF_path<-paste(current_path, "/scRNA-Seq-Variation-Pipeline/mouse_heart_GEO_dat
 
 
 #load data
-zoneI.data<-Read10X(SAN_path)
-zoneII.data<-Read10X(AVN_path)
+SAN.data<-Read10X(SAN_path)
+AVN.data<-Read10X(AVN_path)
+LPF.data<-Read10X(LPF_path)
+RPF.data<-Read10X(RPF_path)
+
 
 #initialize the Seurat objects with the raw (non-normalized data)
-zoneI<-CreateSeuratObject(counts = zoneI.data, project = "zone I", min.cells = 3, min.features = 200)
-zoneII<-CreateSeuratObject(counts = zoneII.data, project = "zone II", min.cells = 3, min.features = 200)
+zoneI<-CreateSeuratObject(counts = SAN.data, project = "zone I", min.cells = 3, min.features = 200)
+table(zoneI$orig.ident)
+
+
+zoneII<-CreateSeuratObject(counts = AVN.data, project = "zone II", min.cells = 3, min.features = 200)
+table(zoneII.combined$orig.ident)
+
+
+zoneIIILPF<-CreateSeuratObject(counts = LPF.data, project = "zone IIILPF",min.cells = 3, min.features = 200)
+zoneIIIRPF<-CreateSeuratObject(counts = RPF.data, project = "zone IIIRPF", min.cells = 3, min.features = 200)
+
+ZoneIII.combined <- merge(zoneIIILPF, y = zoneIIIRPF, add.cell.ids = c("LPF", "RPF"), project = "Zone III")
+ZoneIII.combined
+table(ZoneIII.combined$orig.ident)
 
 
 ### STANDARD PRE-PROCESSING WORKFLOW ###
@@ -44,6 +59,7 @@ zoneII<-CreateSeuratObject(counts = zoneII.data, project = "zone II", min.cells 
 #QC and selecting cells for further analysis
 zoneI[["percent.mt"]] <- PercentageFeatureSet(zoneI, pattern = "^MT-")
 zoneII[["percent.mt"]] <- PercentageFeatureSet(zoneII, pattern = "^MT-")
+ZoneIII.combined[["percent.mt"]] <- PercentageFeatureSet(ZoneIII.combined, pattern = "^MT-")
 
 #visualize QC metrics as a violin plot
 VlnPlot(zoneI, features = c("nFeature_RNA", "nCount_RNA", "percent.mt"), ncol = 3)
@@ -60,6 +76,7 @@ plot1 + plot2
 
 zoneI <- subset(zoneI, subset = nFeature_RNA > 200 & nFeature_RNA < 2500 & percent.mt < 5)
 zoneII <- subset(zoneI, subset = nFeature_RNA > 200 & nFeature_RNA < 2500 & percent.mt < 5)
+ZoneIII.combined <- subset(ZoneIII.combined, subset = nFeature_RNA > 200 & nFeature_RNA < 2500 & percent.mt < 5)
 
 
 
@@ -68,7 +85,7 @@ zoneII <- subset(zoneI, subset = nFeature_RNA > 200 & nFeature_RNA < 2500 & perc
 #normalize the data by employing a global-scaling normalization method “LogNormalize”
 zoneI <- NormalizeData(zoneI, normalization.method = "LogNormalize", scale.factor = 10000)
 zoneII <- NormalizeData(zoneII, normalization.method = "LogNormalize", scale.factor = 10000)
-
+ZoneIII.combined <- NormalizeData(ZoneIII.combined, normalization.method = "LogNormalize", scale.factor = 10000)
 
 
 ### IDENTIFICATION OF HIGHLY VARIABLE FEATURES (FEATURE SELECTION) ###
@@ -76,6 +93,7 @@ zoneII <- NormalizeData(zoneII, normalization.method = "LogNormalize", scale.fac
 #calculate a subset of features that exhibit high cell-to-cell variation in the dataset by directly modeling the mean-variance relationship inherent in single-cell data 
 zoneI <- FindVariableFeatures(zoneI, selection.method = "vst", nfeatures = 2000)
 zoneII <- FindVariableFeatures(zoneII, selection.method = "vst", nfeatures = 2000)
+ZoneIII.combined <- FindVariableFeatures(ZoneIII.combined, selection.method = "vst", nfeatures = 2000)
 
 #identify the 10 most highly variable genes
 top10zoneI <- head(VariableFeatures(zoneI), 10)
@@ -100,16 +118,20 @@ plot1 + plot2
 #Shifts the expression of each gene, so that the mean expression across cells is 0, Scales the expression of each gene, so that the variance across cells is 1
 all.genes <- rownames(zoneI)
 zoneI <- ScaleData(zoneI, features = all.genes)
+zoneI <- ScaleData(zoneI, vars.to.regress = c('percent.ribo','Rn45s'))
 
 all.genes <- rownames(zoneII)
 zoneII <- ScaleData(zoneII, features = all.genes)
+
+all.genes <- rownames(ZoneIII.combined)
+ZoneIII.combined <- ScaleData(ZoneIII.combined, features = all.genes)
 
 ###  PERFORM LINEAR DIMENSIONAL REDUCTION ###
 
 #perform PCA on the scaled data
 zoneI <- RunPCA(zoneI, features = VariableFeatures(object = zoneI))
 zoneII <- RunPCA(zoneII, features = VariableFeatures(object = zoneII))
-
+ZoneIII.combined <- RunPCA(ZoneIII.combined, features = VariableFeatures(object = ZoneIII.combined))
 print(zoneI[["pca"]], dims = 1:5, nfeatures = 5)
 
 ### DETERMINE THE 'DIMENSIONALITY' OF THE DATASET ###
@@ -126,6 +148,11 @@ print(zoneI[["pca"]], dims = 1:5, nfeatures = 5)
 #zoneII <- ScoreJackStraw(zoneII, dims = 1:20)
 
 #JackStrawPlot(zoneII, dims = 1:15)
+
+ZoneIII.combined <- JackStraw(ZoneIII.combined, num.replicate = 100)
+ZoneIII.combined <- ScoreJackStraw(ZoneIII.combined, dims = 1:15)
+
+JackStrawPlot(ZoneIII.combined, dims = 1:15)
 
 #heuristic alternative to JackStraw  
 ElbowPlot(zoneI)
@@ -145,6 +172,10 @@ zoneII <- FindClusters(zoneII, resolution = 0.5)
 tabII<-table(Idents(zoneII))
 tabII
 
+ZoneIII.combined <- FindNeighbors(ZoneIII.combined, dims = 1:14)
+ZoneIII.combined <- FindClusters(ZoneIII.combined, resolution = 0.5)
+tabI<-table(Idents(ZoneIII.combined))
+
 #look at cluster IDs of the first 5 cells
 head(Idents(zoneI), 5)
 head(Idents(zoneII), 5)
@@ -161,11 +192,17 @@ zoneI <- RunUMAP(zoneI, dims = 1:50)
 zoneI <- RunTSNE(zoneI,dims.use = 1:15,reduction.use = "pca")
 DimPlot(zoneI, reduction = "tsne")
 
+ZoneIII.combined
 
 zoneII <- RunUMAP(zoneI, dims = 1:50)
 zoneII <- RunTSNE(zoneII,dims.use = 1:15, reduction.use = "pca")
 DimPlot(zoneII, reduction = "tsne")
 
+ZoneIII.combined <- RunTSNE(ZoneIII.combined,dims.use = 1:15, reduction.use = "pca")
+DimPlot(ZoneIII.combined, reduction = "tsne")
+
+
+ZoneIII.combined
 
 ####Finding differentially expressed features (cluster biomarkers)########
 
@@ -184,6 +221,7 @@ head(cluster4.markers, n = 5)
 #find all markers of Cluster 13 in Zone III
 #cluster13.markers <- FindMarkers(zoneIII, ident.1 = 9, min.pct = 0.25)
 #head(cluster13.markers, n = 5)
+
 
 
 #Uniform Manifold Approximation and projection to do dimensional reduction

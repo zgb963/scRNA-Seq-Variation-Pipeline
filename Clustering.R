@@ -1,8 +1,11 @@
-#set up environment 
+#setwd("/homes/gbaddoo") set correct working directory before running lines below
+#set up environment and load packages
 library(dplyr)
 library(Seurat)
 library(patchwork)
 
+#run this line once before running code below (for umap plots)
+#reticulate::py_install(packages ='umap-learn')
 
 ### SETUP THE SEURAT OBJECT ###
 
@@ -19,6 +22,8 @@ AVN_path<-paste(current_path, "/scRNA-Seq-Variation-Pipeline/mouse_heart_GEO_dat
 #zoneIII
 LPF_path<-paste(current_path, "/scRNA-Seq-Variation-Pipeline/mouse_heart_GEO_data/LPF_GEO", sep="")    #path to LPF GEO data 
 RPF_path<-paste(current_path, "/scRNA-Seq-Variation-Pipeline/mouse_heart_GEO_data/RPF_GEO", sep="")    #path to RPF GEO data 
+
+
 
 #run in terminal: 
 #SAN_path<-paste(current_path, "/mouse_heart_GEO_data/SAN_GEO", sep="")    #path to SAN GEO data 
@@ -76,14 +81,15 @@ zoneII <- FindVariableFeatures(zoneII, selection.method = "vst", nfeatures = 200
 top10zoneI <- head(VariableFeatures(zoneI), 10)
 top10zoneI
 top10zoneII <- head(VariableFeatures(zoneII), 10)
+top10zoneII
 
-#plot variable features with and without labels (ERROR * NEEDS TO BE FIXED)
+#plot variable features with and without labels 
 plot1 <- VariableFeaturePlot(zoneI)
-plot2 <- LabelPoints(plot = plot1, points = top10zoneI, repel = TRUE)
+plot2 <- LabelPoints(plot = plot1, points = top10zoneI, repel = FALSE)
 plot1 + plot2
 
 plot1 <- VariableFeaturePlot(zoneII)
-plot2 <- LabelPoints(plot = plot1, points = top10zoneII, repel = TRUE)
+plot2 <- LabelPoints(plot = plot1, points = top10zoneII, repel = FALSE)
 plot1 + plot2
 
 
@@ -161,7 +167,23 @@ zoneII <- RunTSNE(zoneII,dims.use = 1:15, reduction.use = "pca")
 DimPlot(zoneII, reduction = "tsne")
 
 
+####Finding differentially expressed features (cluster biomarkers)########
 
+#cluster numbers described in Goodyer et al paper
+
+#find all markers of Cluster 9 in zone I
+cluster9.markers <- FindMarkers(zoneI, ident.1 = 9, min.pct = 0.25)
+head(cluster9.markers, n = 5)
+
+
+#find all markers of Cluster 4 in zone II
+cluster4.markers <- FindMarkers(zoneII, ident.1 = 9, min.pct = 0.25)
+head(cluster4.markers, n = 5)
+
+
+#find all markers of Cluster 13 in Zone III
+#cluster13.markers <- FindMarkers(zoneIII, ident.1 = 9, min.pct = 0.25)
+#head(cluster13.markers, n = 5)
 
 
 #Uniform Manifold Approximation and projection to do dimensional reduction

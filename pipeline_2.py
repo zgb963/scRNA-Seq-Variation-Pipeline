@@ -16,4 +16,4 @@ retrieveDataGEO.getGEOdata()
 reformatDataGEO.moveGEO()
 
 #perform clustering and other statistical analyses using Seurat
-
+#run lines in Clustering.R in Rstudio to create outputs

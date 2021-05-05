@@ -15,10 +15,17 @@ The Barefield lab is interested in the heterogeneity of cells within areas of th
 * Linux/Unix
 * Python 3
     * os
-* R 
+* R
+   * dplyr
+   * umap-learn 
 * Cell Ranger
 * Seraut
 
+## Pipeline Overview
+
+The scRNA-Seq-Variation-Pipeline is divided into two sub-pipelines. 
+
+Pipeline 1 or `pipeline_1.py` retrieves 
 
 ## Run The Pipeline: 
 

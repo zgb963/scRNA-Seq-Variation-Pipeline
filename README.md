@@ -27,6 +27,8 @@ The scRNA-Seq-Variation-Pipeline is divided into two sub-pipelines.
 
 Pipeline 1 or `pipeline_1.py` retrieves fastq files from NCBI’s SRA database and map reads to a pre-built mouse genome using Cell Ranger. Genrates a folder named `cellranger_output` which stores important files generated from running Cell Ranger such as `barcodes.tsv.gz` `genes.tsv.gz` and `matrix.mtx.gz` files
 
+Pipeline 2 or `pipeline_2.py` retrieves `barcodes.tsv.gz` `genes.tsv.gz` and `matrix.mtx.gz` files from NCBI’s GEO database and prepares/normalizes data to generate clusters using Seurat. Genrates a folder named `seurat_output` which stores final outputs summarizing analysis including t-SNE plots and tables of differentially expressed features (cluster biomarkers) for significant clusters 
+
 ## Run The Pipeline: 
 
 <h5> Clone Repository: </h5> 
@@ -37,9 +39,15 @@ Pipeline 1 or `pipeline_1.py` retrieves fastq files from NCBI’s SRA database a
 
 `cd scRNA-Seq-Variation-Pipeline/`
 
-<h5> Run Pipeline: </h5>
+<h5> Run Pipeline 1: </h5>
 
-`python3 pipeline.py`
+`python3 pipeline_1.py`
+
+** Note - Pipeline 1 is currently being modified 
+
+<h5> Run Pipeline 2: </h5>
+
+`python3 pipeline_2.py`
 
 
 Important files and outputs

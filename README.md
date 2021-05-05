@@ -25,7 +25,7 @@ The Barefield lab is interested in the heterogeneity of cells within areas of th
 
 The scRNA-Seq-Variation-Pipeline is divided into two sub-pipelines. 
 
-Pipeline 1 or `pipeline_1.py` retrieves 
+Pipeline 1 or `pipeline_1.py` retrieves fastq files from NCBI’s SRA database and map reads to a pre-built mouse genome using Cell Ranger. Genrates a folder named `cellranger_output` which stores important files generated from running Cell Ranger such as `barcodes.tsv.gz` `genes.tsv.gz` and `matrix.mtx.gz` files
 
 ## Run The Pipeline: 
 

@@ -11,24 +11,24 @@ library(patchwork)
 #get full directory to mouse heart GEO data 
 current_path<-getwd()
 
-#run in Rstudio: 
+#run in Rstudio (add repository to paths at all locations in code): 
 #zoneI
-SAN_path<-paste(current_path, "/scRNA-Seq-Variation-Pipeline/mouse_heart_GEO_data/SAN_GEO", sep="")    #path to SAN GEO data 
+#SAN_path<-paste(current_path, "/scRNA-Seq-Variation-Pipeline/mouse_heart_GEO_data/SAN_GEO", sep="")    #path to SAN GEO data 
 
 #zoneII
-AVN_path<-paste(current_path, "/scRNA-Seq-Variation-Pipeline/mouse_heart_GEO_data/AVN_GEO", sep="")    #path to AVN GEO data 
+#AVN_path<-paste(current_path, "/scRNA-Seq-Variation-Pipeline/mouse_heart_GEO_data/AVN_GEO", sep="")    #path to AVN GEO data 
 
 #zoneIII
-LPF_path<-paste(current_path, "/scRNA-Seq-Variation-Pipeline/mouse_heart_GEO_data/LPF_GEO", sep="")    #path to LPF GEO data 
-RPF_path<-paste(current_path, "/scRNA-Seq-Variation-Pipeline/mouse_heart_GEO_data/RPF_GEO", sep="")    #path to RPF GEO data 
+#LPF_path<-paste(current_path, "/scRNA-Seq-Variation-Pipeline/mouse_heart_GEO_data/LPF_GEO", sep="")    #path to LPF GEO data 
+#RPF_path<-paste(current_path, "/scRNA-Seq-Variation-Pipeline/mouse_heart_GEO_data/RPF_GEO", sep="")    #path to RPF GEO data 
 
 
 
 #run in terminal: 
-#SAN_path<-paste(current_path, "/mouse_heart_GEO_data/SAN_GEO", sep="")    #path to SAN GEO data 
-#AVN_path<-paste(current_path, "/mouse_heart_GEO_data/AVN_GEO", sep="")    #path to AVN GEO data 
-#LPF_path<-paste(current_path, "/mouse_heart_GEO_data/LPF_GEO", sep="")    #path to LPF GEO data 
-#RPF_path<-paste(current_path, "/mouse_heart_GEO_data/RPF_GEO", sep="")    #path to RPF GEO data 
+SAN_path<-paste(current_path, "/mouse_heart_GEO_data/SAN_GEO", sep="")    #path to SAN GEO data 
+AVN_path<-paste(current_path, "/mouse_heart_GEO_data/AVN_GEO", sep="")    #path to AVN GEO data 
+LPF_path<-paste(current_path, "/mouse_heart_GEO_data/LPF_GEO", sep="")    #path to LPF GEO data 
+RPF_path<-paste(current_path, "/mouse_heart_GEO_data/RPF_GEO", sep="")    #path to RPF GEO data 
 
 
 #load data
@@ -54,7 +54,7 @@ zoneIII.combined <- merge(zoneIIILPF, y = zoneIIIRPF, add.cell.ids = c("LPF", "R
 #QC and selecting cells for further analysis
 zoneI[["percent.mt"]] <- PercentageFeatureSet(zoneI, pattern = "^MT-")
 zoneII[["percent.mt"]] <- PercentageFeatureSet(zoneII, pattern = "^MT-")
-zoneIII.combined[["percent.mt"]] <- PercentageFeatureSet(ZoneIII.combined, pattern = "^MT-")
+zoneIII.combined[["percent.mt"]] <- PercentageFeatureSet(zoneIII.combined, pattern = "^MT-")
 
 #visualize QC metrics as a violin plot
 VlnPlot(zoneI, features = c("nFeature_RNA", "nCount_RNA", "percent.mt"), ncol = 3)
@@ -182,9 +182,9 @@ head(Idents(zoneIII.combined), 5)
 
 ### RUN NON-LINEAR DIMENSIONAL REDUCTION (UMAP/t-SNE) ###
 #Run t-distributed Stochastic Neighbor Embedding
-zoneI_tsne_path<-paste(current_path, "/scRNA-Seq-Variation-Pipeline/seurat_output/zoneI_tsne.jpeg", sep="")    #path to zone I tsne
-zoneII_tsne_path<-paste(current_path, "/scRNA-Seq-Variation-Pipeline/seurat_output/zoneII_tsne.jpeg", sep="")    #path to zone II tsne
-zoneIII_tsne_path<-paste(current_path, "/scRNA-Seq-Variation-Pipeline/seurat_output/zoneIII_tsne.jpeg", sep="")    #path to zone III tsne
+zoneI_tsne_path<-paste(current_path, "/seurat_output/zoneI_tsne.jpeg", sep="")    #path to zone I tsne
+zoneII_tsne_path<-paste(current_path, "/seurat_output/zoneII_tsne.jpeg", sep="")    #path to zone II tsne
+zoneIII_tsne_path<-paste(current_path, "/seurat_output/zoneIII_tsne.jpeg", sep="")    #path to zone III tsne
 
 
 zoneI <- RunTSNE(zoneI,dims.use = 1:15,reduction.use = "pca")
@@ -207,9 +207,9 @@ dev.off()
 ### FINDING DIFERENTIALLY EXPRESSED FEATURES (CLUSTER BIOMARKERS)) ###
 
 #cluster numbers described in Goodyer et al paper
-zoneI_cluster_path<-paste(current_path, "/scRNA-Seq-Variation-Pipeline/seurat_output/zoneI_C9_HF.csv", sep="")    #path to cluster 9 variable ft 
-zoneII_cluster_path<-paste(current_path, "/scRNA-Seq-Variation-Pipeline/seurat_output/zoneII_C4_HF.csv", sep="")    #path to cluster 4 variable ft
-zoneIII_cluster_path<-paste(current_path, "/scRNA-Seq-Variation-Pipeline/seurat_output/zoneIII_C13_HF.csv", sep="")    #path to cluster 13 variable ft
+zoneI_cluster_path<-paste(current_path, "/seurat_output/zoneI_C9_HF.csv", sep="")    #path to cluster 9 variable ft 
+zoneII_cluster_path<-paste(current_path, "/seurat_output/zoneII_C4_HF.csv", sep="")    #path to cluster 4 variable ft
+zoneIII_cluster_path<-paste(current_path, "/seurat_output/zoneIII_C13_HF.csv", sep="")    #path to cluster 13 variable ft
 
 #find all markers of Cluster 9 in zone I
 cluster9.markers <- FindMarkers(zoneI, ident.1 = 9, min.pct = 0.25)

@@ -53,24 +53,25 @@ Pipeline 2 or `pipeline_2.py` retrieves `barcodes.tsv.gz` `features.tsv.gz` and 
 ## Important Scripts 
 
 Pipeline 1 
->* `retrieveDataSRA.py`
->retrieves fastq mouse heart data from NCBI's SRA and pre-built reference mouse genome within Cell Ranger. Creates `mouse_heart_SRA_data` folder to store fastq files and `mouse_genome` folder to store genome 
+* `retrieveDataSRA.py`
+retrieves fastq mouse heart data from NCBI's SRA and pre-built reference mouse genome within Cell Ranger. Creates `mouse_heart_SRA_data` folder to store fastq files and `mouse_genome` folder to store genome 
 
->* `reformatDataSRA.py`
->renames fastq files to original format that is Cell Ranger compatible 
+* `reformatDataSRA.py`
+renames fastq files to original format that is Cell Ranger compatible 
 
->* `mapReads.py`
- >calls Cell Ranger command to map sequencing reads to the mouse reference genome. Creates `cellranger_output` folder which stores barcodes, features, and matrix files 
+* `mapReads.py`
+ calls Cell Ranger command to map sequencing reads to the mouse reference genome. Creates `cellranger_output` folder which stores barcodes, features, and matrix files 
+ 
 
 Pipeline 2
->* `retrieveDataGEO.py`
->retrieves mouse heart data or barcodes, features, and matrix files (synonymous with Cell Ranger output) from NCBI's GEO database. Creates `mouse_heart_GEO_data` folder to store files 
+* `retrieveDataGEO.py`
+retrieves mouse heart data or barcodes, features, and matrix files (synonymous with Cell Ranger output) from NCBI's GEO database. Creates `mouse_heart_GEO_data` folder to store files 
  
->* `reformatDataGEO.py`
->renames GEO barcodes, genes, and matrix files and prepares appropriate folders (e.g `SAN_GEO`) for Seurat to read in
+* `reformatDataGEO.py`
+renames GEO barcodes, genes, and matrix files and prepares appropriate folders (e.g `SAN_GEO`) for Seurat to read in
  
->* `Clustering.R`
->creates a Seurat object for each zone, performs QC parameters and filtration on data, scales and normalizes data, performs PCA and dimensional reduction, and finally clusters data. Significant outputs are stored in `seruat_output` folder 
+* `Clustering.R`
+creates a Seurat object for each zone, performs QC parameters and filtration on data, scales and normalizes data, performs PCA and dimensional reduction, and finally clusters data. Significant outputs are stored in `seruat_output` folder 
 
 
 ## Important Outputs

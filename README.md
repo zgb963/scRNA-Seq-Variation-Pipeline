@@ -71,3 +71,8 @@ Pipeline 2
  
 >* `Clustering.R`
 >creates a Seurat object for each zone, performs QC parameters and filtration on data, scales and normalizes data, performs PCA and dimensional reduction, and finally clusters data. Significant outputs are stored in `seruat_output` folder 
+
+
+## Important Outputs
+`seurat_output` folder stores final results or analysis of the pipeline including the t-SNE plots for Zone I, Zone II, and Zone III and tables of differentially expressed features (cluster biomarkers) for significant clusters in each Zone 
+

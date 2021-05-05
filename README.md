@@ -50,13 +50,13 @@ Pipeline 2 or `pipeline_2.py` retrieves `barcodes.tsv.gz` `genes.tsv.gz` and `ma
 `python3 pipeline_2.py`
 
 
-Important files and outputs
+## Important Scripts 
 ==================
 
-* retrieveData.py
->retrieves mouse heart data from NCBI's SRA and retrieves Cell Ranger reference mouse genome. Creates mouse heart SRA data output folder
+* `retrieveDataSRA.py`
+>retrieves fastq mouse heart data from NCBI's SRA and pre-built reference mouse genome within Cell Ranger. Creates `mouse_heart_SRA_data` folder to store fastq files and `mouse_genome` folder to store genome 
 
-* reformatData.py
+* `reformatDataSRA.py`
 >reformats fastq files for Cell Ranger input 
 
 * mapReads.py

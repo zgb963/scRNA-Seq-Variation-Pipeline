@@ -26,7 +26,7 @@ It is evident from the example of transitional cells that understanding the comp
 * De-multiplex and map scRNA-Seq data to mouse genome using Cell Ranger 
 * Perform clustering of scRNA-Seq data using Seraut
 * Quantify scRNA-Seq data
-* Report significant output including standard deviations of gene expression of cells in clusters of interest
+* Report significant output including t-SNE plots of cell clusters for each zone and differentially expressed features (cluster biomarkers) for significant clusters in each Zone
 
 # Non-Goals #
 

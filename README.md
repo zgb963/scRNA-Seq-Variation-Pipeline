@@ -13,7 +13,7 @@ The Barefield lab is interested in the heterogeneity of cells within areas of th
 ## Software Tools Required
 
 * Linux/Unix
-* Python3
+* Python 3
     * os
 * R 
 * Cell Ranger

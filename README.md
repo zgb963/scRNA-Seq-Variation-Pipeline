@@ -25,9 +25,9 @@ The Barefield lab is interested in the heterogeneity of cells within areas of th
 
 The scRNA-Seq-Variation-Pipeline is divided into two sub-pipelines. 
 
-Pipeline 1 or `pipeline_1.py` retrieves fastq files from NCBI’s SRA database and map reads to a pre-built mouse genome using Cell Ranger. Genrates a folder named `cellranger_output` which stores important files generated from running Cell Ranger such as `barcodes.tsv.gz` `genes.tsv.gz` and `matrix.mtx.gz` files
+Pipeline 1 or `pipeline_1.py` retrieves fastq files from NCBI’s SRA database and map reads to a pre-built mouse genome using Cell Ranger. Genrates a folder named `cellranger_output` which stores important files generated from running Cell Ranger such as `barcodes.tsv.gz` `features.tsv.gz` and `matrix.mtx.gz` files
 
-Pipeline 2 or `pipeline_2.py` retrieves `barcodes.tsv.gz` `genes.tsv.gz` and `matrix.mtx.gz` files from NCBI’s GEO database and prepares/normalizes data to generate clusters using Seurat. Genrates a folder named `seurat_output` which stores final outputs summarizing analysis including t-SNE plots and tables of differentially expressed features (cluster biomarkers) for significant clusters 
+Pipeline 2 or `pipeline_2.py` retrieves `barcodes.tsv.gz` `features.tsv.gz` and `matrix.mtx.gz` files from NCBI’s GEO database and prepares/normalizes data to generate clusters using Seurat. Genrates a folder named `seurat_output` which stores final outputs summarizing analysis including t-SNE plots and tables of differentially expressed features (cluster biomarkers) for significant clusters 
 
 ## Run The Pipeline: 
 
@@ -51,16 +51,21 @@ Pipeline 2 or `pipeline_2.py` retrieves `barcodes.tsv.gz` `genes.tsv.gz` and `ma
 
 
 ## Important Scripts 
-==================
 
 * `retrieveDataSRA.py`
->retrieves fastq mouse heart data from NCBI's SRA and pre-built reference mouse genome within Cell Ranger. Creates `mouse_heart_SRA_data` folder to store fastq files and `mouse_genome` folder to store genome 
+retrieves fastq mouse heart data from NCBI's SRA and pre-built reference mouse genome within Cell Ranger. Creates `mouse_heart_SRA_data` folder to store fastq files and `mouse_genome` folder to store genome 
 
 * `reformatDataSRA.py`
->reformats fastq files for Cell Ranger input 
+renames fastq files to original format that is Cell Ranger compatible 
 
-* mapReads.py
->contains Cell Ranger command to map sequencing reads to the mouse reference genome. Creates Cell Ranger output folder
-
-* clusteringSeurat.R
->runs R package called Seurat that clusters mouse heart data from Cell Ranger output
+* `mapReads.py`
+ calls Cell Ranger command to map sequencing reads to the mouse reference genome. Creates `cellranger_output` folder which stores barcodes, features, and matrix files 
+ 
+ * `retrieveDataGEO.py`
+ retrieves mouse heart data or barcodes, features, and matrix files (synonymous with Cell Ranger output) from NCBI's GEO database. Creates `mouse_heart_GEO_data` folder to store files 
+ 
+ * `reformatDataGEO.py`
+ renames GEO barcodes, genes, and matrix files and prepares appropriate folders (e.g `SAN_GEO`) for Seurat to read in
+ 
+* `Clustering.R`
+runs R package called Seurat that clusters mouse heart data from Cell Ranger output

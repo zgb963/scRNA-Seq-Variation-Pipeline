@@ -150,7 +150,7 @@ JackStrawPlot(zoneII, dims = 1:15)
 
 zoneIII.combined <- JackStraw(zoneIII.combined, num.replicate = 100)
 zoneIII.combined <- ScoreJackStraw(zoneIII.combined, dims = 1:15)
-JackStrawPlot(ZoneIII.combined, dims = 1:15)
+JackStrawPlot(zoneIII.combined, dims = 1:15)
 
 #heuristic alternative to JackStraw  
 ElbowPlot(zoneI)
@@ -200,7 +200,7 @@ dev.off()
 
 zoneIII.combined <- RunTSNE(zoneIII.combined,dims.use = 1:15, reduction.use = "pca")
 jpeg(file = zoneIII_tsne_path)         #save tsne plot as jpeg 
-DimPlot(ZoneIII.combined, reduction = "tsne")
+DimPlot(zoneIII.combined, reduction = "tsne")
 dev.off()
 
 

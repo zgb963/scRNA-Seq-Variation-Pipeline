@@ -43,7 +43,7 @@ Pipeline 2 or `pipeline_2.py` retrieves `barcodes.tsv.gz` `genes.tsv.gz` and `ma
 
 `python3 pipeline_1.py`
 
-**Note - Pipeline 1 is currently being modified and therefore isn't needed to perform analysis or generate final outputs. Pipeline 2 retrieves data similar to that generated in Cell Ranger and is able to generate final outputs. In order to run pipeline ONLY run Pipeline 2** 
+***Note - Pipeline 1 is currently being modified and therefore isn't needed to perform analysis or generate final outputs refer to [Design Doc](https://github.com/Genevieve-Baddoo/scRNA-Seq-Variation-Pipeline/blob/main/DesignDocument.md). Pipeline 2 retrieves data similar to that generated in Cell Ranger and is able to generate final outputs. In order to run pipeline ONLY run Pipeline 2***
 
 <h5> Run Pipeline 2: </h5>
 

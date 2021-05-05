@@ -164,22 +164,22 @@ ElbowPlot(zoneII)
 zoneI <- FindNeighbors(zoneI, dims = 1:14)
 zoneI <- FindClusters(zoneI, resolution = 0.5)
 tabI<-table(Idents(zoneI))
-tabI
+tabI #has 15 clusters
 
 zoneII <- FindNeighbors(zoneII, dims = 1:10)
 zoneII <- FindClusters(zoneII, resolution = 0.5)
 
 tabII<-table(Idents(zoneII))
-tabII
+tabII #has 13 clusters
 
 ZoneIII.combined <- FindNeighbors(ZoneIII.combined, dims = 1:14)
 ZoneIII.combined <- FindClusters(ZoneIII.combined, resolution = 0.5)
-tabI<-table(Idents(ZoneIII.combined))
+tabIII<-table(Idents(ZoneIII.combined))
 
 #look at cluster IDs of the first 5 cells
 head(Idents(zoneI), 5)
 head(Idents(zoneII), 5)
-
+head(Idents(ZoneIII.combined), 5)
 
 ### RUN NON-LINEAR DIMENSIONAL REDUCTION (UMAP/t-SNE) ###
 #reticulate::py_install(packages ='umap-learn')
@@ -219,8 +219,8 @@ head(cluster4.markers, n = 5)
 
 
 #find all markers of Cluster 13 in Zone III
-#cluster13.markers <- FindMarkers(zoneIII, ident.1 = 9, min.pct = 0.25)
-#head(cluster13.markers, n = 5)
+cluster13.markers <- FindMarkers(zoneIII, ident.1 = 9, min.pct = 0.25)
+head(cluster13.markers, n = 5)
 
 
 

@@ -29,7 +29,7 @@ Pipeline 1 or `pipeline_1.py` retrieves fastq files from NCBI’s SRA database a
 
 Pipeline 2 or `pipeline_2.py` retrieves `barcodes.tsv.gz` `features.tsv.gz` and `matrix.mtx.gz` files from NCBI’s GEO database and prepares/normalizes data to generate clusters using Seurat. Genrates a folder named `seurat_output` which stores final outputs summarizing analysis including t-SNE plots and tables of differentially expressed features (cluster biomarkers) for significant clusters 
 
-##Run The Pipeline: 
+## Run The Pipeline: 
 
 <h5> Clone Repository: </h5> 
 

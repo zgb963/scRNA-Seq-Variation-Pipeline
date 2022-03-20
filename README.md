@@ -43,7 +43,7 @@ Pipeline 2 or `pipeline_2.py` retrieves `barcodes.tsv.gz` `features.tsv.gz` and 
 
 `python3 pipeline_1.py`
 
-***Note - Pipeline 1 is currently being modified and therefore isn't needed to perform analysis or generate final outputs (please refer to [Design Doc](https://github.com/Genevieve-Baddoo/scRNA-Seq-Variation-Pipeline/blob/main/DesignDocument.md)) Pipeline 2 retrieves data similar to that generated in Cell Ranger and is able to generate final outputs. In order to run pipeline ONLY run Pipeline 2***
+***Note - Pipeline 1 is currently being modified and therefore isn't needed to perform analysis or generate final outputs (please refer to [Design Doc](https://github.com/Genevieve-Baddoo/scRNA-Seq-Variation-Pipeline/blob/main/DesignDocument.md)) Pipeline 2 retrieves data similar to that generated in Cell Ranger and it generates final outputs. In order to run sc-RNA-Seq-Variation pipeline ONLY run Pipeline 2***
 
 <h5> Run Pipeline 2: </h5>
 
@@ -52,7 +52,7 @@ Pipeline 2 or `pipeline_2.py` retrieves `barcodes.tsv.gz` `features.tsv.gz` and 
 
 ## Important Scripts 
 
-Pipeline 1 
+Pipeline 1 (being modified)
 * `retrieveDataSRA.py`
 retrieves fastq mouse heart data from NCBI's SRA and pre-built reference mouse genome within Cell Ranger. Creates `mouse_heart_SRA_data` folder to store fastq files and `mouse_genome` folder to store genome 
 

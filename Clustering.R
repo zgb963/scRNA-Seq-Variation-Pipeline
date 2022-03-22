@@ -1,7 +1,12 @@
 #set up environment and load packages
+#library(Seurat)
+#library(patchwork)
+
+
 library(dplyr)
 library(Seurat)
 library(patchwork)
+
 
 #run this line once before running code below 
 #reticulate::py_install(packages ='umap-learn')
@@ -31,7 +36,7 @@ LPF_path<-paste(current_path, "/mouse_heart_GEO_data/LPF_GEO", sep="")    #path 
 RPF_path<-paste(current_path, "/mouse_heart_GEO_data/RPF_GEO", sep="")    #path to RPF GEO data 
 
 
-#load data
+#load data form Cell Ranger from 3 different heart zones
 SAN.data<-Read10X(SAN_path)
 AVN.data<-Read10X(AVN_path)
 LPF.data<-Read10X(LPF_path)
@@ -115,10 +120,16 @@ plot1 + plot2
 
 
 
-### SCALING THE DATA ###
+###SCALING THE DATA###
 
 #apply a linear transformation (‘scaling’) that is a standard pre-processing step prior to dimensional reduction techniques like PCA
 #Shifts the expression of each gene, so that the mean expression across cells is 0, Scales the expression of each gene, so that the variance across cells is 1
+#all.genes <- rownames(zoneI)
+#all.genes <- rownames(zoneII)
+#all.genes <- rownames(zoneIII.combined)
+
+
+#include the 3 heart zones
 all.genes <- rownames(zoneI)
 zoneI <- ScaleData(zoneI, features = all.genes)
 
@@ -127,6 +138,7 @@ zoneII <- ScaleData(zoneII, features = all.genes)
 
 all.genes <- rownames(zoneIII.combined)
 zoneIII.combined <- ScaleData(zoneIII.combined, features = all.genes)
+
 
 ###  PERFORM LINEAR DIMENSIONAL REDUCTION ###
 
@@ -159,7 +171,7 @@ ElbowPlot(zoneIII.combined)
 
 
 
-### CLUSTER THE CELLS ###
+###CLUSTER CELLS###
 zoneI <- FindNeighbors(zoneI, dims = 1:14)
 zoneI <- FindClusters(zoneI, resolution = 0.5)
 tabI<-table(Idents(zoneI))
@@ -204,7 +216,7 @@ DimPlot(zoneIII.combined, reduction = "tsne")
 dev.off()
 
 
-### FINDING DIFERENTIALLY EXPRESSED FEATURES (CLUSTER BIOMARKERS)) ###
+###FINDING DIFERENTIALLY EXPRESSED FEATURES (CLUSTER BIOMARKERS))###
 
 #cluster numbers described in Goodyer et al paper
 zoneI_cluster_path<-paste(current_path, "/seurat_output/zoneI_C9_HF.csv", sep="")    #path to cluster 9 variable ft 

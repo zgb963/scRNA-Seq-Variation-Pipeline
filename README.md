@@ -77,3 +77,18 @@ creates a Seurat object for each zone, performs QC parameters and filtration on 
 ## Important Outputs
 `seurat_output` folder stores final results or analysis of the pipeline including the t-SNE plots for Zone I, Zone II, and Zone III and tables of differentially expressed features (cluster biomarkers) for significant clusters in each Zone 
 
+
+
+##Future Directions
+*Merge Pipeline 1 and 2 
+*Generate clusters of cells that highly express a specific gene of interest
+    *CNTN2, MYBPHL
+*Assign cell type identity to clusters
+    
+
+
+
+
+
+
+

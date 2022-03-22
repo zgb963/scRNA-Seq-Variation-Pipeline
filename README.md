@@ -81,7 +81,7 @@ creates a Seurat object for each zone, performs QC parameters and filtration on 
 
 ## Future Directions
 
-Merge Pipeline 1 and 2. Generate clusters of cells that highly express a specific gene of interest (CNTN2, MYBPHL). Assign cell type identity to clustere
+Merge Pipeline 1 and 2. Generate clusters of cells that highly express a specific gene of interest (CNTN2, MYBPHL). Assign cell type identity to clusters.
     
 
 
